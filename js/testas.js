@@ -11,9 +11,9 @@ function greaterOrEqual(val) {
     return `Tavo skaičius yra didesnis.`;
     }
     if (val === a) {
-    return `Mūsų skaičiai yra lygūs!`;
+    return `Mūsų skaičiai yra lygūs! 🤣`;
     }
-    return `Error: Skaičiai netenkina duotos sąlygos!`;
+    return `Mano skačius didesnis!`;
 }
 
 console.log(greaterOrEqual(12));
@@ -76,15 +76,68 @@ while (loading < 11) {
 // 6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30. Surasti didžiausią masyvo reikšmę, NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
 console.log('\n');
 
+// 
+
 const arr = [];
 
+for (let i = 0; i < 20 || i <= 30; i++) {
+    arr.push(Math.floor(9 + Math.random() * 20) + 1);
+}
 
+let res = 0;
+
+for (let i = 0; i < arr.length; i++) {
+    if (res < arr[i]) {
+        res = arr[i];
+    }
+}
+
+console.log(res);
+// console.log(res, arr);
 
 
 // 7. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 100. Suskaičiuokite kiek yra kiekvienos raidės. (7 taškai)
 console.log('\n');
 
-// 8. Parašyti funkciją - lygineSuma. Funkcijos parametrai - du kintamieji. Testų reikalavimai - abu kitamieji turi būti arba skaičiai arba masyvai(negali būti vienas skaičius, kitas masyvas).
+// for (let i = 0; i <= 100; i++) {
+//     arrLtrs = 
+
+// }
+
+const letters = [];
+
+let countA = 0;
+let countB = 0;
+let countC = 0;
+let countD = 0;
+
+
+for (let i = 0; i < 100; i++) {
+    letters.push(Math.floor(Math.random() * 4));
+}
+
+for (let i = 0; i < letters.length; i++) {
+    if (letters[i] === 0) {
+        letters[i] = 'A';
+        countA++;
+    } else if (letters[i] === 1) {
+        letters[i] = 'B';
+        countB++;
+    } else if (letters[i] === 2) {
+        letters[i] = 'C';
+        countC++;
+    } else if (letters[i] === 3) {
+        letters[i] = 'D';
+        countD++;
+    } 
+}
+
+//console.log(letters);
+
+console.log(`Total of: ${countA} -> A; ${countB} -> B; ${countC} -> C; ${countD} -> D.`);
+
+
+// 8. Parašyti funkciją - lygineSuma. Funkcijos parametrai - du kintamieji. Testų reikalavimai - abu kitamieji turi būti arba skaičiai arba masyvai(negali būti vienas skaičius, kitas letters).
 console.log('\n');
 
 // Jei kintamieji skaičiai, grąžinti skaičių sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą. Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė - grąžinti tekstą, kad suma nelyginė. (10 taškų)
@@ -100,8 +153,9 @@ console.log('\n');
 console.log('\n');
 
 const tel = [3705552355];
-const tel2 = [37005563355];
-const tel3 = [+3705552355];
+const tel2 = [+3705525551];
+const tel3 = [37005563355];
+const tel4 = [+37055555];
 
 let telefonoNumeris = (str) => {
     //Filter only the numbers from the input:
@@ -120,4 +174,5 @@ let telefonoNumeris = (str) => {
 console.log(telefonoNumeris(tel));
 console.log(telefonoNumeris(tel2));
 console.log(telefonoNumeris(tel3));
+console.log(telefonoNumeris(tel4));
 
