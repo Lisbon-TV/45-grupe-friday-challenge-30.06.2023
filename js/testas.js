@@ -58,7 +58,6 @@ console.log('\n');
 
 let loading = 1;
 
-
 while (loading < 11) {
     loading++;
     const randNo = Math.floor(Math.random() * 10) + 1;
@@ -72,7 +71,6 @@ while (loading < 11) {
     //  ????  //
     console.log(randNo);
 }
-
 
 
 // 6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30. Surasti didžiausią masyvo reikšmę, NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
@@ -98,10 +96,28 @@ console.log('\n');
 // skaičius yra tas, kuris dalinasi tik iš savęs ir tik iš vieneto be liekanos.) (10 taškų)
 
 
-// 10. Parašyti funkciją telefonoNumeris. Funkcija turi priimti vieną kintamąjį - masyvą. Masyvo elementai - skaičiai, ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - 
+// 10. Parašyti funkciją telefonoNumeris. Funkcija turi priimti vieną kintamąjį - masyvą. Masyvo elementai - skaičiai, ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - "(XXX) XXX-XXXX". (10 taškų)
 console.log('\n');
 
-// "(XXX) XXX-XXXX". (10 taškų)
+const tel = [3705552355];
+const tel2 = [37005563355];
+const tel3 = [+3705552355];
 
+let telefonoNumeris = (str) => {
+    //Filter only the numbers from the input:
+    let cleaned = ('' + str).replace(/\D/g, '');
+        
+    //Check if the input has the correct length:
+    let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+      
+    if (match) {
+        return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+        };
+      
+        return null
+    };
 
+console.log(telefonoNumeris(tel));
+console.log(telefonoNumeris(tel2));
+console.log(telefonoNumeris(tel3));
 
