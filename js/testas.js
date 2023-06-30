@@ -56,12 +56,13 @@ for (let i = 0; i < 5; i++) {
 // 5. Naudojant while ciklą, spausdinti atsitiktinius skaičius nuo 1 iki 10. Paskutinis atspausdintas skaičius turi būti 5. (7 taškai)
 console.log('\n');
 
+let newArr = [];
 let loading = 1;
 
 while (loading < 11) {
     loading++;
-    const randNo = Math.floor(Math.random() * 10) + 1;
-    // randomNo.push(5); 
+    const randNo = Math.floor(Math.random() * 10) + 1
+    // randoNo.push(5); 
                     // +1 Math nebereiktu... 
     // randNo.splice(9, 1, 5);
     // const newArr = [...randNo, ...[5]]; 
@@ -69,6 +70,8 @@ while (loading < 11) {
     // const newArray =randNo.concact([5]);
                     //+1 Math nebereiktu...
     //  ????  //
+    // randNo.push(5);   
+
     console.log(randNo);
 }
 
@@ -76,7 +79,6 @@ while (loading < 11) {
 // 6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30. Surasti didžiausią masyvo reikšmę, NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
 console.log('\n');
 
-// 
 
 const arr = [];
 
@@ -134,19 +136,124 @@ for (let i = 0; i < letters.length; i++) {
 
 //console.log(letters);
 
-console.log(`Total of: ${countA} -> A; ${countB} -> B; ${countC} -> C; ${countD} -> D.`);
+console.log(`Total: 
+${countA} -> A; 
+${countB} -> B; 
+${countC} -> C; 
+${countD} -> D.`);
 
 
 // 8. Parašyti funkciją - lygineSuma. Funkcijos parametrai - du kintamieji. Testų reikalavimai - abu kitamieji turi būti arba skaičiai arba masyvai(negali būti vienas skaičius, kitas letters).
 console.log('\n');
 
+function lygineSuma (a, b) {
+    // if (typeof a !== 'number' || !isFinite(a)) {
+        if (typeof 
+        typeof a === 'null'||
+        typeof a === 'NaN' || 
+        typeof a === 'boolean'|| 
+        typeof a === 'string' ||
+        !isFinite(a)) {
+        return 'ERROR: pirmas parametras privalo būti normalus skaičius arba masyvas.';
+    }
+
+    // if (typeof b !== 'number' || !isFinite(b)) {
+        if (
+        typeof b === 'null'||
+        typeof b === 'NaN' || 
+        typeof b === 'boolean' || 
+        typeof b === 'string' ||
+        !isFinite(b)) {
+        return 'ERROR: antras parametras privalo būti normalus skaičius arba masyvas.';
+    }
+
+    if (typeof a !== typeof b) {
+        return `ERROR: Kintamųjų tipai turi būti vienodi!`
+    }
+
+    if (typeof a === 'number' || isFinite(a)) {
+        if ((a + b) % 2 === 1) {
+            return `Kintamųjų suma yra nelyginė.`;
+        } else {
+            return a + b;
+        }
+
+    if (typeof a === 'object') {
+       if ((a.length + b.length) % 2 === 1) {
+            return `Objektų ilgių suma yra nelyginė.`;
+        } else {
+            return a.length + b.length;
+        }
+    }
+    }
+}
+
+
+console.log(lygineSuma('labas', 2));
+console.log(lygineSuma('5', 2));
+console.log(lygineSuma([], 2));
+console.log(lygineSuma(true, 2));
+console.log(lygineSuma(false, 2));
+console.log(lygineSuma(lygineSuma, 2));
+console.log(lygineSuma(undefined, 2));
+console.log(lygineSuma(7, 'labas'));
+console.log(lygineSuma(7, '5'));
+console.log(lygineSuma(7, []));
+console.log(lygineSuma(7, true));
+console.log(lygineSuma(7, false));
+console.log(lygineSuma(7, lygineSuma));
+console.log(lygineSuma(7, undefined));
+console.log(lygineSuma(NaN, 2));
+console.log(lygineSuma(Infinity, 2));
+console.log(lygineSuma(-Infinity, 2));
+console.log(lygineSuma(7, NaN));
+console.log(lygineSuma(7, Infinity));
+console.log(lygineSuma(7, -Infinity));
+
+console.log('------------');
+console.log(lygineSuma(2, 2), '->', 4);
+console.log(lygineSuma(7, 5), '->', 12);
+console.log(lygineSuma(-7, 5), '->', -2);
+console.log(lygineSuma(7, -5), '->', 2);
+console.log(lygineSuma(-7, -5), '->', -12);
+console.log(lygineSuma(0, -5), '->', -5);
+console.log(lygineSuma(0, 5), '->', 5);
+console.log(lygineSuma(-5, 0), '->', -5);
+console.log(lygineSuma(5, 0), '->', 5);
+console.log(lygineSuma(0.5, 0.5), '->', 1);
+console.log(lygineSuma([5, 2], [2 , 3]), '->', 4);
+
+console.log('------------');
+
 // Jei kintamieji skaičiai, grąžinti skaičių sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą. Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė - grąžinti tekstą, kad suma nelyginė. (10 taškų)
 
 
-// 9. Parašyti funkciją pirminisSkaicius. Funkcija turi vieną kintamąjį. Turi būti patikrinimas, kad kintamasis yra skaičius. Funkcija turi grąžinti ar pateiktas skaičius yra pirminis( pirminis
+
+// 9. Parašyti funkciją pirminisSkaicius. Funkcija turi vieną kintamąjį. Turi būti patikrinimas, kad kintamasis yra skaičius. Funkcija turi grąžinti ar pateiktas skaičius yra pirminis( pirminis skaičius yra tas, kuris dalinasi tik iš savęs ir tik iš vieneto be liekanos.) (10 taškų)
 console.log('\n');
 
-// skaičius yra tas, kuris dalinasi tik iš savęs ir tik iš vieneto be liekanos.) (10 taškų)
+
+
+function yraPirminisSkaicius (num) {
+    if (num < 2) {
+        return `Pateiktas skaičius ${num} nėra pirminis.`;
+    }
+
+    let root = Math.ceil(Math.sqrt(num));
+    console.log(root); 
+
+    for(let i = 2; i <= root; i++) {
+        if (num % i === 0) {
+            return  `Pateiktas skaičius ${num} nėra pirminis.`;
+        }
+    }
+    return `Pateiktas skaičius ${num} yra pirminis`;
+}
+
+console.log(yraPirminisSkaicius(5));
+console.log(yraPirminisSkaicius(127));
+console.log(yraPirminisSkaicius(1));
+
 
 
 // 10. Parašyti funkciją telefonoNumeris. Funkcija turi priimti vieną kintamąjį - masyvą. Masyvo elementai - skaičiai, ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - "(XXX) XXX-XXXX". (10 taškų)
@@ -158,11 +265,11 @@ const tel3 = [37005563355];
 const tel4 = [+37055555];
 
 let telefonoNumeris = (str) => {
-    //Filter only the numbers from the input:
-    let cleaned = ('' + str).replace(/\D/g, '');
+    //Išrinkti numbers is masysvo:
+    let cleanTel = ('' + str).replace(/\D/g, '');
         
-    //Check if the input has the correct length:
-    let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    //Masyvo ilgis 10:
+    let match = cleanTel.match(/^(\d{3})(\d{3})(\d{4})$/);
       
     if (match) {
         return '(' + match[1] + ') ' + match[2] + '-' + match[3]
@@ -176,3 +283,21 @@ console.log(telefonoNumeris(tel2));
 console.log(telefonoNumeris(tel3));
 console.log(telefonoNumeris(tel4));
 
+
+
+
+//Personal notes: 
+
+// arrPlusArr = (arr1, arr2) => arr1.concat(arr2).reduce((prev, curr) => prev + curr);
+
+// console.log(arrPlusArr([2, 5, 7, 10,], [10, 20, 1, 2]), 57);
+
+
+// function sumArr (a, b) {
+//     return a.length + b.length; 
+// }
+
+// console.log(sumArr([2,4],[7,1,]), 14);
+
+// const g = [2,4];
+// console.log(typeof g);
