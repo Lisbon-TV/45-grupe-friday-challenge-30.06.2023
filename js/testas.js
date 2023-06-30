@@ -80,7 +80,7 @@ console.log('\n ......  -5- ........');
 let n = '';
 
 while (n <= 10) {
-    console.log(n = Math.floor(Math.random() * 10));
+    console.log(n = Math.floor(Math.random() * 10) + 1);
     if (n === 5) {
         break;
     }    
@@ -200,7 +200,7 @@ function lygineSuma (a, b) {
 
 console.log(lygineSuma('labas', 2));
 console.log(lygineSuma('5', 2));
-console.log(lygineSuma([], 2));
+console.log(lygineSuma([], 2));  // no error message; result -> undefined!
 console.log(lygineSuma(true, 2));
 console.log(lygineSuma(false, 2));
 console.log(lygineSuma(lygineSuma, 2));
@@ -208,7 +208,7 @@ console.log(lygineSuma(undefined, 2));
 console.log('.............');
 console.log(lygineSuma(7, 'labas'));
 console.log(lygineSuma(7, '5'));
-console.log(lygineSuma(7, []));
+console.log(lygineSuma(7, [])); // no error message; result -> undefined!
 console.log(lygineSuma(7, true));
 console.log(lygineSuma(7, false));
 console.log(lygineSuma(7, lygineSuma));
@@ -233,8 +233,8 @@ console.log(lygineSuma(-5, 0), '->', -5);
 console.log(lygineSuma(5, 0), '->', 5);
 console.log(lygineSuma(0.5, 0.5), '->', 1);
 console.log('.............');
-// Failed the Test! 🤔
-console.log(lygineSuma([5, 2], [2 , 3]), '->', 4);
+// Failed the Test! 🤔 Wrong error message and no result! 
+console.log(lygineSuma([5, 2], [2 , 3]), '->', 4); 
 console.log(lygineSuma([1, 2], [1 , 1, 5]), '->', 5);
 
 console.log('------------');
