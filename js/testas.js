@@ -56,8 +56,18 @@ for (let i = 0; i < 5; i++) {
 // 5. Naudojant while ciklą, spausdinti atsitiktinius skaičius nuo 1 iki 10. Paskutinis atspausdintas skaičius turi būti 5. (7 taškai)
 console.log('\n');
 
+let loading = 1;
+
+while (loading < 11) {
+    loading++;
+    const random = Math.floor(Math.random() * 10) + 1;
+    console.log(random);
+}
+
 // 6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30. Surasti didžiausią masyvo reikšmę, NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
 console.log('\n');
+
+
 
 // 7. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 100. Suskaičiuokite kiek yra kiekvienos raidės. (7 taškai)
 console.log('\n');
