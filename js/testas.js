@@ -58,14 +58,28 @@ console.log('\n');
 
 let loading = 1;
 
+
 while (loading < 11) {
     loading++;
-    const random = Math.floor(Math.random() * 10) + 1;
-    console.log(random);
+    const randNo = Math.floor(Math.random() * 10) + 1;
+    // randomNo.push(5); 
+                    // +1 Math nebereiktu... 
+    // randNo.splice(9, 1, 5);
+    // const newArr = [...randNo, ...[5]]; 
+                    // +1 Math nebereiktu...
+    // const newArray =randNo.concact([5]);
+                    //+1 Math nebereiktu...
+    //  ????  //
+    console.log(randNo);
 }
+
+
 
 // 6. Sukurti masyvą, kurio ilgis būtų nuo 20 iki 30, o reikšmės būtų skaičiai nuo 10 iki 30. Surasti didžiausią masyvo reikšmę, NENAUDOJANT sort() bei Math.max() funkcijų. (7 taškai)
 console.log('\n');
+
+const arr = [];
+
 
 
 
