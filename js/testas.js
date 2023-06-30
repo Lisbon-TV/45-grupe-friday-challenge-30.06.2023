@@ -37,6 +37,12 @@ for (let i = 1; i <= 10; i++) {
 // 3. Naudojant for ciklą, išvesti į konsolę skaičius nuo 0, 2, 4, 6, 8, 10. (5 taškai)
 console.log('\n');
 
+for (let i = 0; i <= 10; i++) {
+    if (i === 0 || i % 2 ===0) {
+    console.log(i);
+    }
+}
+
 // 4. Naudojant for ciklą, sugeneruoti penkis atsitiktinius skaičius nuo 1 iki 10. Išvesti juos konsolėje. (5 taškai)
 console.log('\n');
 
